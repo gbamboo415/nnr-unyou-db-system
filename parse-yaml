@@ -1,11 +1,15 @@
 #!/usr/bin/awk -f
 
-/^- / {
-    data = substr($0, 3)
-    trainnum_idx = match(data, /:/)
+# 行頭コメントは読み飛ばす
+/^#/ {
+    next
+}
+
+{
+    trainnum_idx = match($0, /:/)
     if (trainnum_idx != 0) {
-        trainnum = substr(data, 1, trainnum_idx-1)
-        formation = substr(data, trainnum_idx+1)
+        trainnum = substr($0, 1, trainnum_idx-1)
+        formation = substr($0, trainnum_idx+1)
         gsub(/ /, "", formation)
     }
     print trainnum, formation
