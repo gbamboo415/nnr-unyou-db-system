@@ -1,0 +1,8 @@
+#!/usr/bin/awk -f
+
+{
+    count = split($2, formations, "+")
+    for (i = 1; i <= count; i++) {
+        print $1, i, formations[i]
+    }
+}

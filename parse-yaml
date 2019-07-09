@@ -1,0 +1,12 @@
+#!/usr/bin/awk -f
+
+/^- / {
+    data = substr($0, 3)
+    trainnum_idx = match(data, /:/)
+    if (trainnum_idx != 0) {
+        trainnum = substr(data, 1, trainnum_idx-1)
+        formation = substr(data, trainnum_idx+1)
+        gsub(/ /, "", formation)
+    }
+    print trainnum, formation
+}
