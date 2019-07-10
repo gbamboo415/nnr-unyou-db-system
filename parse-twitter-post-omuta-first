@@ -1,0 +1,10 @@
+#!/bin/sh
+# parse-twitter-post-omuta-first
+# 西鉄運用メモタグを付けて投稿された、運用見たまま情報のうち、
+# 大牟田方先記で記述されている併結編成の情報を、福岡方先記に
+# 変換し、同時に運用DB標準のYAML形式とする。
+
+cat $1 |
+sed 's/\(列車\|レ\)\( \|:\|：\|…\)/ /' |
+awk '{c=split($2,f,"+");printf("%s: ",$1);for(i=c;i>=1;i--){printf("%s+",f[i])};printf "\n"}' |
+sed 's/\+$//'
