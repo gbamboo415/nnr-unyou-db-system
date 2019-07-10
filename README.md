@@ -8,6 +8,13 @@ bashを中心としたUNIXコマンドラインツール群を用いて、西鉄
 
 ## ツール
 
+### parse-twitter-post-fukuoka-first
+- Twitterに西鉄運用メモタグをつけて投稿された運用情報を、YAML形式に整形する
+
+### parse-twitter-post-omuta-first
+- 当プログラムの目的は上に同じ
+- DB標準形式の編成順序に揃えるため、編成記述順序の逆転を行う。
+
 ### parse-yaml
 - AWKスクリプト
 - YAML形式で書かれた、運用見たまま情報 (一次情報) を簡易的にパース
