@@ -1,0 +1,5 @@
+contents="nnr-unyou-db-data" # データリポジトリの名前
+contents_owner="gbamboo415" # データリポジトリ所有者のユーザ名
+wwwdir="/home/users/2/raindrop.jp-aotake-rail/web" # データリポジトリやシステムを置くディレクトリ
+contentsdir="$wwwdir/$contents" # データリポジトリのパス
+appdir="$wwwdir/nnr-unyou-db-system" # システムをインストールするパス
