@@ -1,0 +1,13 @@
+#!/bin/bash
+
+START_DATE=$1
+END_DATE=$2
+current=$START_DATE
+while [ 1 ]
+do
+    echo $current
+	if [ $current = $END_DATE ]; then
+		break
+	fi
+	current=$(date -d "$current 1 day" '+%Y%m%d')
+done

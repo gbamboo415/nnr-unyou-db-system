@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# datafile-exist-check
+# 指定した期間のデータファイルが存在するかどうか調べる
+# Usage:
+#    datafile-exist-check 20190701 20190715
+#    日付はyyyymmdd形式で指定する
+
+check_file () {
+	if [ -e $1 ]; then
+		echo "$(basename $1) Exist"
+	else
+		echo "$(basename $1) Not_Exist"
+	fi
+}
+export -f check_file
+
+$(dirname $0)/daylist $1 $2 |
+xargs -I@ bash -c "check_file ../nnr-unyou-db-data/rawdata/@.yml"
