@@ -1,8 +1,43 @@
 <table>
 <tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
-<tr><td></td><td>01</td><td>02</td><td>03</td><td>04</td><td>05</td><td>06</td></tr>
-<tr><td>07</td><td>08</td><td>09</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
-<tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
-<tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
-<tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
+<tr><td></td>
+<td>01</td>
+<td>02</td>
+<td><b><a href="index.cgi?date=20190703">03</a></b></td>
+<td><b><a href="index.cgi?date=20190704">04</a></b></td>
+<td><b><a href="index.cgi?date=20190705">05</a></b></td>
+<td><b><a href="index.cgi?date=20190706">06</a></b></td>
+</tr>
+<tr><td><b><a href="index.cgi?date=20190707">07</a></b></td>
+<td><b><a href="index.cgi?date=20190708">08</a></b></td>
+<td><b><a href="index.cgi?date=20190709">09</a></b></td>
+<td><b><a href="index.cgi?date=20190710">10</a></b></td>
+<td><b><a href="index.cgi?date=20190711">11</a></b></td>
+<td><b><a href="index.cgi?date=20190712">12</a></b></td>
+<td><b><a href="index.cgi?date=20190713">13</a></b></td>
+</tr>
+<tr><td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+</tr>
+<tr><td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+</tr>
+<tr><td>28</td>
+<td>29</td>
+<td>30</td>
+<td>31</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </table>
