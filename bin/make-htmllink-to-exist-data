@@ -1,0 +1,15 @@
+#!/usr/bin/awk -f
+# make-htmllink-to-exist-data
+# 運用情報データが存在する日について、HTMLのリンクおよび強調タグを生成する
+# 
+# 入力 (標準入力より):
+#     datafile-exist-checkの出力
+
+$2 == "Exist" {
+	date_ymd = substr($1, 1, length($1)-4)
+	date_day = substr(date_ymd, 7, 2)
+
+	print date_day " <b><a href=\"index.cgi?date=" \
+		  date_ymd  "\">" \
+		  date_day  "</a></b>"
+}

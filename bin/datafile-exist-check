@@ -15,5 +15,9 @@ check_file () {
 }
 export -f check_file
 
-$(dirname $0)/daylist $1 $2 |
-xargs -I@ bash -c "check_file ../nnr-unyou-db-data/rawdata/@.yml"
+$(dirname $0)/seqdate $1 $2 |
+sed 's/-//g'                |
+while read f
+do
+	check_file ../nnr-unyou-db-data/rawdata/$f.yml
+done

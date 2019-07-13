@@ -1,0 +1,21 @@
+#!/bin/bash
+# make-cmd-update-caleder-htmltable
+# カレンダーテーブルファイルにリンクを付けるための
+# 更新スクリプトを生成する
+#
+# 引数:
+#     $1: 期間開始日
+#     $2: 期間終了日
+#     $3: カレンダーテーブルファイル (月ごと)
+
+readonly targetfile="data/$(basename $3)"
+echo -e "#!/bin/bash"
+echo -e "cat ${targetfile} |"
+
+$(dirname $0)/datafile-exist-check $1 $2          |
+$(dirname $0)/make-htmllink-to-exist-data         |
+awk '{print "sed '\''s/" $1 "/" $2 $3 "/'\'' | "}'
+
+echo -e "tee ${targetfile}.replaced"
+echo -e "rm ${targetfile}"
+echo -e "mv ${targetfile}.replaced ${targetfile}"
