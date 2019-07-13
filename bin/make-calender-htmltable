@@ -1,0 +1,34 @@
+#!/bin/bash
+# make-calender-htmltable
+# データ一覧ページに表示する、HTMLのカレンダーテーブルを生成する
+
+source "$(dirname $0)/conf"
+readonly checkdir="${contentsdir}/rawdata"
+
+echo '<table>'
+echo '<tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>'
+
+cal $1 $2  |
+sed '1,2d' |
+sed 's/\([0-9]\)\( \|\n\)/\1,/g' |
+sed 's/   /00,/g'     |
+sed 's/  $/00/'       |
+sed '/^00.\+00$/d'    |
+sed 's!,!</td><td>!g' |
+sed 's!^!<tr><td>!'   |
+sed 's!$!</td></tr>!' |
+sed 's/00//g'         |
+sed 's/ /0/g'         > /tmp/$$-make-cal.tmp
+
+# readonly begindate="$(date -d "$2/$1/01" '+%Y%m%d')"
+# readonly enddate="$(date -d "$2/$1/01 1 month last day" '+%Y%m%d')"
+
+# $(dirname $0)/datafile-exist-check $begindate $enddate                        |
+# sed 's/\.yml//'                                                               |
+# awk '$2=="Exist"{print "<b><a href=\"index.cgi?date=" $1 "\">"  "</a></b>"}'
+
+cat /tmp/$$-make-cal.tmp
+
+echo '</table>'
+
+rm -f /tmp/$$-make-cal.tmp
