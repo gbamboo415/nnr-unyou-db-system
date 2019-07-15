@@ -8,6 +8,11 @@
 #     $2: 期間終了日
 #     $3: カレンダーテーブルファイル (月ごと)
 
+if [ $# -ne 3 ]; then
+	echo -e "Error: 期間開始日、終了日、カレンダーテーブルファイルを指定してください。" 1>&2
+	exit 1
+fi
+
 readonly targetfile="data/$(basename $3)"
 echo -e "#!/bin/bash"
 echo -e "cat ${targetfile} |"
