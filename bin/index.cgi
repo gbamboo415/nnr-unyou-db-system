@@ -19,8 +19,8 @@ echo
 
 # GENERATE METADATA
 op_date=$(date -d $order_date '+%Y-%m-%d')
-op_prev_date=$(date -d "$order_date 1 day" '+%Y%m%d')
-op_next_date=$(date -d "$order_date 1 day ago" '+%Y%m%d')
+op_prev_date=$(date -d "$order_date 1 day ago" '+%Y%m%d')
+op_next_date=$(date -d "$order_date 1 day" '+%Y%m%d')
 count=$(cat $datafilename | wc -l)
 
 # OUTPUT
