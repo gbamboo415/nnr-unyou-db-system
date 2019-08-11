@@ -1,5 +1,6 @@
 #!/bin/bash -euvx
 source "$(dirname $0)/conf"
+export PATH="$PATH:/usr/local/bin"
 trap 'rm -f $tmp-*' EXIT
 
 # VARIABELS
