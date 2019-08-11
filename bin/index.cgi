@@ -6,8 +6,12 @@ trap 'rm -f $tmp-*' EXIT
 # VARIABELS
 tmp=/tmp/$$
 order_date=$(tr -dc '0-9' <<< ${QUERY_STRING})
-datafilename="$contentsdir/rawdata/${order_date:-$(date '+%Y%m%d')}.yml"
-[ -f $datafilename ]
+
+if [ "$order_date" = "" ] ; then
+  order_date=$(date '+%Y%m%d')
+fi
+
+datafilename="$contentsdir/rawdata/${order_date}.yml"
 
 # HTTP HEADER
 echo "Content-Type: text/html"
