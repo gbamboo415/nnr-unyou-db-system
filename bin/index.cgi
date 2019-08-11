@@ -14,7 +14,7 @@ echo "Content-Type: text/html"
 echo
 
 # GENERATE METADATA
-op_date=$(date '+%Y-%m-%d')
+op_date=$(date -d $order_date '+%Y-%m-%d')
 count=$(cat $datafilename | wc -l)
 
 # OUTPUT
