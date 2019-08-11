@@ -5,7 +5,8 @@ trap 'rm -f $tmp-*' EXIT
 
 # VARIABELS
 tmp=/tmp/$$
-datafilename="$contentsdir/$(tr -dc '0-9'<<< ${QUERY_STRING}).yml"
+order_date=$(tr -dc '0-9' <<< ${QUERY_STRING})
+datafilename="$contentsdir/rawdata/${order_date:-$(date '+%Y%m%d')}.yml"
 [ -f $datafilename ]
 
 # HTTP HEADER
