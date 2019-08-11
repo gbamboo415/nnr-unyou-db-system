@@ -19,12 +19,16 @@ echo
 
 # GENERATE METADATA
 op_date=$(date -d $order_date '+%Y-%m-%d')
+op_prev_date=$(date -d "$order_date 1 day" '+%Y%m%d')
+op_next_date=$(date -d "$order_date 1 day ago" '+%Y%m%d')
 count=$(cat $datafilename | wc -l)
 
 # OUTPUT
 cat << DAT > $tmp-meta.yml
 ---
 date: $op_date
+prev_date: $op_prev_date
+next_date: $op_next_date
 count: $count
 information:
 $(cat $datafilename | sed 's/\(.*\): \(.*\)/- tnum: \1\n  formation: \2/')
